@@ -1,0 +1,21 @@
+/*------------------------------index.php------------------------------------*/
+#index-container
+{
+	float: none;
+	margin: auto;
+	/*background-image: url('images/1.jpg');*/
+	height: 100%;
+	background-color:#e6e6e6;
+	margin-top: 2%;
+}
+img
+{
+	padding-top: 2%;
+}
+#full
+{
+	float: none;
+	margin: auto;
+	margin-top: 2%;
+}
+/*---------------------------------------------------------------------------*/

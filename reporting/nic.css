@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+
+.containingelement {
+	position: relative;
+	z-index: 1;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+.containingelement textarea {
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.my-select {
+	margin: 1px 5px 1px 10px;
+	padding: 1px 5px 1px 10px;
+	border-radius: 6px;
+}
+
+.footer {
+	margin: 100px;
+}
