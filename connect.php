@@ -6,4 +6,12 @@ $serverName = ".\SQLEXPRESS"; //serverName\instanceName
 $connectionInfo = array( "Database"=>"nic");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
+if( $conn === false )  
+{  
+     echo "Could not connect.\n";  
+     die( print_r( sqlsrv_errors(), true));  
+}  
+//else
+//	echo "connection established";
+
 ?>

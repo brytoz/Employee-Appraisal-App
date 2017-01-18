@@ -1,0 +1,31 @@
+Database : Microsoft SQL Server 2008 r2
+Webserver : xampp for Apache 
+Server side language : PHP
+OS : Win10
+
+--> Install xampp
+
+--> Install Microsoft SQL Server 2008 r2
+	files to be download for 64 bit system
+		SQLManagementStudio_x64_ENU.exe
+		SQLEXPR_x64_ENU.exe
+
+-->Setup PHP for SQLsrv
+	    1.Download PHP_SQLSRV Driver
+			for PHP 7 => SQLSRV40.EXE
+		
+		2.Extract and copy dll files,mentioned below to c:\\xampp\php\ext 
+		
+		php_sqlsrv_7_ts_x86.dll
+		php_pdo_sqlsrv_7_ts_x86.dll
+
+		3.Edit php.ini(c:\\xampp\php\php.ini) file and add lines,mentioned below,in the extension section of phpi.ini(dll files are architecture dependent)
+
+		extension=php_sqlsrv_7_ts_x86.dll
+		extension=php_pdo_sqlsrv_7_ts_x86.dll
+
+		4.Version 4.0 requires Microsoft ODBC Driver 11 or Microsoft ODBC Driver 13.Hence Download file mentioned below form microsoft site.	
+		
+		msodbcsql.msi
+	
+--> Restart apache

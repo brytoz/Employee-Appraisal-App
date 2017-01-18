@@ -1,0 +1,97 @@
+----------- Insert Dummy data into the tables
+
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp1','emp1','employee1','cadre1','','dep1')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp2','emp2','employee2','cadre2','','dep1')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp3','emp3','employee3','cadre3','','dep2')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp4','emp4','employee4','cadre4','','dep2')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp5','emp5','employee5','cadre5','','dep2')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp6','emp6','employee6','cadre6','','dep3')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp7','emp7','employee7','cadre1','','dep4')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp8','emp8','employee8','cadre2','','dep3')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp9','emp9','employee9','cadre3','','dep4')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp10','emp10','employee10','cadre4','','dep5')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp11','emp11','employee11','cadre5','','dep4')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp12','emp12','employee12','cadre6','','dep5')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp13','emp13','employee13','cadre1','','dep6')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp14','emp14','employee14','cadre2','','dep7')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp15','emp15','employee15','cadre3','','dep8')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp16','emp16','employee16','cadre4','','dep8')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp17','emp17','employee17','cadre5','','dep9')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp18','emp18','employee18','cadre6','','dep9')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp19','emp19','employee19','cadre1','','dep6')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp20','emp20','employee20','cadre2','','dep1')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp21','emp21','employee21','cadre3','','dep2')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp22','emp22','employee22','cadre4','','dep3')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp23','emp23','employee23','cadre5','','dep4')
+insert into employee (emp_id,passwd,name,cadre,yor,depof) values ('emp24','emp24','employee24','cadre6','','dep5')
+--------------------------------------------------------------------------------------------------------------------
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep1','rep1','reporting1','desig1')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep2','rep2','reporting2','desig2')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep3','rep3','reporting3','desig3')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep4','rep4','reporting4','desig4')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep5','rep5','reporting5','desig5')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep6','rep6','reporting6','desig6')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep7','rep7','reporting7','desig7')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep8','rep8','reporting8','desig8')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep9','rep9','reporting9','desig9')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep10','rep10','reporting10','desig10')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep11','rep11','reporting11','desig11')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep12','rep12','reporting12','desig12')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep13','rep13','reporting13','desig13')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep14','rep14','reporting14','desig14')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep15','rep15','reporting15','desig15')
+insert into reporting_officer (rep_off_id,passwd,name,designation) values ('rep16','rep16','reporting16','desig16')
+---------------------------------------------------------------------------------------------------------------------
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev1','rev1','review1','desig1')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev2','rev2','review2','desig2')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev3','rev3','review3','desig3')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev4','rev4','review4','desig4')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev5','rev5','review5','desig5')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev6','rev6','review6','desig6')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev7','rev7','review7','desig7')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev8','rev8','review8','desig8')
+insert into review_officer (rev_off_id,passwd,name,designation) values ('rev9','rev9','review9','desig9')
+---------------------------------------------------------------------------------------------------------------------
+
+update reporting_officer set rev_off_id = 'rev1' where rep_off_id = 'rep1'
+update reporting_officer set rev_off_id = 'rev7' where rep_off_id = 'rep2'
+update reporting_officer set rev_off_id = 'rev1' where rep_off_id = 'rep3'
+update reporting_officer set rev_off_id = 'rev6' where rep_off_id = 'rep4'
+update reporting_officer set rev_off_id = 'rev5' where rep_off_id = 'rep5'
+update reporting_officer set rev_off_id = 'rev8' where rep_off_id = 'rep6'
+update reporting_officer set rev_off_id = 'rev5' where rep_off_id = 'rep7'
+update reporting_officer set rev_off_id = 'rev4' where rep_off_id = 'rep8'
+update reporting_officer set rev_off_id = 'rev8' where rep_off_id = 'rep9'
+update reporting_officer set rev_off_id = 'rev4' where rep_off_id = 'rep10'
+update reporting_officer set rev_off_id = 'rev3' where rep_off_id = 'rep11'
+update reporting_officer set rev_off_id = 'rev9' where rep_off_id = 'rep12'
+update reporting_officer set rev_off_id = 'rev3' where rep_off_id = 'rep13'
+update reporting_officer set rev_off_id = 'rev2' where rep_off_id = 'rep14'
+update reporting_officer set rev_off_id = 'rev2' where rep_off_id = 'rep15'
+update reporting_officer set rev_off_id = 'rev9' where rep_off_id = 'rep16'
+
+----------------------------------------------------------------------------------------------------------------------
+
+update employee set rep_off_id = 'rep1' where emp_id = 'emp1'
+update employee set rep_off_id = 'rep' where emp_id = 'emp2'
+update employee set rep_off_id = 'rep' where emp_id = 'emp3'
+update employee set rep_off_id = 'rep' where emp_id = 'emp4'
+update employee set rep_off_id = 'rep' where emp_id = 'emp5'
+update employee set rep_off_id = 'rep' where emp_id = 'emp6'
+update employee set rep_off_id = 'rep' where emp_id = 'emp7'
+update employee set rep_off_id = 'rep' where emp_id = 'emp8'
+update employee set rep_off_id = 'rep' where emp_id = 'emp9'
+update employee set rep_off_id = 'rep' where emp_id = 'emp10'
+update employee set rep_off_id = 'rep' where emp_id = 'emp11'
+update employee set rep_off_id = 'rep' where emp_id = 'emp12'
+update employee set rep_off_id = 'rep' where emp_id = 'emp13'
+update employee set rep_off_id = 'rep' where emp_id = 'emp14'
+update employee set rep_off_id = 'rep' where emp_id = 'emp15'
+update employee set rep_off_id = 'rep' where emp_id = 'emp16'
+update employee set rep_off_id = 'rep' where emp_id = 'emp17'
+update employee set rep_off_id = 'rep' where emp_id = 'emp18'
+update employee set rep_off_id = 'rep' where emp_id = 'emp19'
+update employee set rep_off_id = 'rep' where emp_id = 'emp20'
+update employee set rep_off_id = 'rep' where emp_id = 'emp21'
+update employee set rep_off_id = 'rep' where emp_id = 'emp23'
+update employee set rep_off_id = 'rep' where emp_id = 'emp24'

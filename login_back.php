@@ -25,7 +25,7 @@ if(isset($_POST['submit-login']))
 	{
 		$query = "select user_id,passwd from admin  where user_id='$uid' and passwd='$pwd'";
 
-		$data=sqlsrv_query($conn,$query);
+		$data=sqlsrv_query($conn,$query,array(), array( "Scrollable" => 'keyset' ));
 		$row=sqlsrv_fetch_array($data);
 		$num=sqlsrv_num_rows($data);
 		if($row)

@@ -1,0 +1,161 @@
+create table admin
+(
+user_id varchar(20),
+passwd varchar(20)
+
+);
+-------------------------------------------------------------------------------
+
+create table acceptance_auth
+(
+accp_off_id varchar(20) primary key,
+passwd varchar(20),
+);
+
+create table remarks_accp
+(
+accp_off_id varchar(20) primary key,
+agree varchar(10),
+desagree varchar(10),
+
+foreign key (accp_off_id) references acceptance_auth(accp_off_id)
+on update cascade on delete cascade
+); 
+-------------------------------------------------------------------------------
+create table review_officer
+(
+sno int identity(1,1),
+rev_off_id varchar(20),
+passwd varchar(20),
+primary key(rev_off_id)
+);
+
+create table rev_off_eval
+(
+rev_off_id varchar(20),
+emp_id varchar(20),
+length_of_service varchar(20),
+agreement varchar(10),
+disagree varchar(100),
+pen_picture varchar(100),
+over_all_grading float,
+
+foreign key (rev_off_id) references review_officer(rev_off_id)
+on update cascade on delete cascade
+);
+------------------------------------------------------------------------------
+create table reporting_officer
+(
+sno int identity(1,1),
+rep_off_id varchar(20) primary key,
+rev_off_id varchar(20),
+passwd varchar(20),
+name varchar(20),
+designation varchar(20)
+);
+
+create table rep_off_eval(
+		rep_off_id varchar(20),
+		emp_id varchar(20),
+		accomp_planned_work int,
+		qua_of_output int,
+		analyt_ability int,
+		accomp_excep_work int,
+		over_all_grade_wo int,
+		attitude_work int,
+		sense_of_respo int,
+		maint_of_desci int,
+		comm_skill int,
+		leader_qual int,
+		team_sprit int,
+		time_schedule int,
+		personal_rel int,
+		overall_pers int,
+		over_all_grade_pa int,
+		knwl_rule int,
+		planng_ability int,
+		decison_ability int,
+		cordination_ability int,
+		ability_motivate int,
+		handling int,
+		quality_inspec int,
+		financial_prop int,
+		over_all_grade_fc int,
+primary key(rep_off_id,emp_id),
+
+foreign key (rep_off_id) references reporting_officer(rep_off_id)
+on update cascade on delete cascade
+
+
+
+
+);
+
+
+
+create table general_eval
+(
+rep_off_id varchar(20),
+emp_id varchar(20),
+public_relation varchar(100),
+training varchar(100),
+health_state varchar(100),
+integrity varchar(100),
+pen_picture varchar(1000),
+over_all_grading float,
+
+primary key(rep_off_id,emp_id),
+
+foreign key (rep_off_id) references reporting_officer(rep_off_id)
+on update cascade on delete cascade
+);
+------------------------------------------------------------------------
+create table employee
+(
+sno int identity(1,1),
+emp_id varchar(20),
+rep_off_id varchar(20),
+rev_off_id varchar(20),
+passwd varchar(20),
+
+name varchar(20),
+cadre varchar(20),
+yor date,
+depof varchar(20),
+primary key(emp_id)
+);
+
+create table personal_data
+(
+emp_id varchar(20),
+name varchar(50),
+dob date,
+qualifi varchar(100),
+app_present_grade date,
+grade varchar(20),
+present_post varchar(20),
+date_app date,
+leave_period_from date,
+leave_period_to date,
+training varchar (50),
+primary key(emp_id),
+
+foreign key (emp_id) references employee(emp_id)
+on update cascade on delete cascade
+);
+
+create table officer_rep_upon
+(
+emp_id varchar(20),
+brief_desc varchar(MAX),
+achiev varchar(MAX),
+shortfalls varchar(MAX),
+higher_achiev varchar(MAX),
+dofilling date,
+ip varchar(20),
+
+primary key(emp_id),
+foreign key(emp_id) references employee(emp_id)
+on update cascade on delete cascade
+);
+--------------------------------------------------------------------------
