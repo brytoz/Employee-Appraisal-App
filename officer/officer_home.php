@@ -91,7 +91,7 @@ require "header.php";
   <div id="report" class="tab-pane fade col-sm-50" id="r">
     <?php
     require "connect.php";
-        $query="select * from rep_off_eval where emp_id='$emp_id' and rep_off_id='$rep_off'" ;
+        $query="select * from rep_off_eval where emp_id='$emp_id'" ;
         $data=sqlsrv_query($conn,$query);
         $row=sqlsrv_fetch_array($data);
 
@@ -242,9 +242,13 @@ require "header.php";
       <h4>GENERAL</h4>
     
        <?php
-    require "connect.php";
-        $query="select * from rep_general_eval where emp_id='emp_id'";
-        $data=sqlsrv_query($conn,$query);
+        require "connect.php";
+//        if(!empty($_GET))
+  //        {
+    //        $emp_id=$_GET['uid'];
+      //    }
+        $query="select * from general_eval where emp_id = '$emp_id'";
+        $data=sqlsrv_query($conn,$query)or die(print_r(sqlsrv_errors(),true));
         $row=sqlsrv_fetch_array($data);
              $value1=$row['public_relation'];
              $value2=$row['training'];
@@ -258,7 +262,7 @@ require "header.php";
                 $value7=date_format($value7,'Y-m-d');
               }
              
-    ?>
+    ?> 
 
       <table class="table">
       <thead>
@@ -443,7 +447,7 @@ require "header.php";
           $obj=$row['obj'];
           $achiev=$row['achiev'];
           $shortfalls=$row['shortfalls'];
-          $higher_achie=$row['higher_achie'];
+          $higher_achie=$row['higher_achiev'];
           $dofilling=$row['dofilling'];
           $dofilling=date_format($dofilling,'Y-m-d');
       ?>

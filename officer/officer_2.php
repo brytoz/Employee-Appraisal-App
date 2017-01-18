@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -14,12 +14,28 @@
 
 </head>
 <body onload="setDate()">
-<?php require("header.php"); ?>
+<?php require("header.php");
+
+if(isset($_GET))
+{
+	$uid=$_GET['uid'];
+	//session_start();
+	$_SESSION['uid']=$uid;
+}
+
+require "connect.php";
+
+ $query = "select * from officer_rep_upon where emp_id= '$uid' ";
+ $data=sqlsrv_query($conn,$query,array(), array( "Scrollable" => 'keyset' ));
+ $num=sqlsrv_num_rows($data);
+ if($num)
+ 	header('Location : officer_2.php');
+?>
 	<div class="container">
 		<h3 class="text-center">To be filled in by the Officer reported upon<br><small>(Please read carefully the instruction before filling the entries)</small></h3>
 		
 		<hr>
-		<form role="form" method="post" action="officer_1_back.php">
+		<form role="form" method="post" action="officer_back.php">
 			<div class="form-group">
 				<label class="control-label">1. Brief description of duties </label>
 				<textarea class="form-control" rows="5" required="required" name="bd"></textarea>
@@ -63,7 +79,7 @@
 			<div class="form-group">
 				<label class="control-label">
 					4. Please state whether the annual return on immovable property for the preceding calendar year was filed within
-					the prescribed date i.e. 31st January of the year following &nbsp;&nbsp;&nbsp;&nbsp;the calendar year. If not, the date of filling the return 
+					the prescribed date i.e. 31st January of the year following the calendar year. If not, the date of filling the return 
 					should be given.
 				</label>
 				<textarea class="form-control" rows="5" required="required" name="ip"></textarea>

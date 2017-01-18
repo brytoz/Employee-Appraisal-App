@@ -15,16 +15,21 @@
 </head>
 <body onload="setDate()">
 <?php
-require("header.php"); 
+require("header.php");
+
 if(isset($_GET))
 {
 	$uid=$_GET['uid'];
-	session_start();
+	//session_start();
 	$_SESSION['uid']=$uid;
 }
+ require "connect.php";
 
-
-
+ $query = "select * from personal_data where emp_id = '$uid'";
+ $data=sqlsrv_query($conn,$query,array(), array( "Scrollable" => 'keyset' ));
+ $num=sqlsrv_num_rows($data);
+ if($num)
+ 	header('Location : officer_2.php');
 ?>
 	<div class="container">
 	
@@ -46,7 +51,7 @@ if(isset($_GET))
 		<p class="text-center">(To be filled by the Administrative Section concerned of the Ministry / Department / Office )</p>
 		
 		
-		<form class="form-horizontal" role="form" action="officer_1_back.php" method="post">
+		<form class="form-horizontal" role="form" action="officer_back.php" method="post">
 			<div class="form-group">
 				<label class="control-label col-sm-3">Name of Officer </label>
 				<div class="col-sm-7">
