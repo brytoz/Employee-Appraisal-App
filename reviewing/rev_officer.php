@@ -19,9 +19,9 @@
 	include "header.php";
 	if(!empty ($_GET))
 	{
-		$uid=$_GET['uid'];
-		$repid=$_GET['repid'];
-		$eid=$_GET['eid'];
+		$rev_id=$_GET['revid'];
+		$rep_id=$_GET['repid'];
+		$emp_id=$_GET['empid'];
 	}
 ?>
 	<div class="container">
@@ -42,7 +42,7 @@
       <div class="modal-body">
        <?php
 		require "connect.php";
-        $query="select * from personal_data where emp_id='$eid'";
+        $query="select * from personal_data where emp_id='$emp_id'";
         $data=sqlsrv_query($conn,$query);
         $row=sqlsrv_fetch_array($data);
         	$name=$row['name'];
@@ -112,7 +112,7 @@
 		
        <?php
 		require "connect.php";
-        $query="select * from officer_rep_upon where emp_id='$eid'";
+        $query="select * from officer_rep_upon where emp_id='$emp_id'";
         $data=sqlsrv_query($conn,$query);
         $row=sqlsrv_fetch_array($data);
         	$brief_desc=$row['brief_desc'];
@@ -185,7 +185,7 @@
       <div class="modal-body">
 <?php
 		require "connect.php";
-        $query="select * from rep_off_eval where emp_id='$eid' and rep_off_id='$repid'" ;
+        $query="select * from rep_off_eval where emp_id='$emp_id' and rep_off_id='$rep_id'" ;
         $data=sqlsrv_query($conn,$query);
         $row=sqlsrv_fetch_array($data);
 
@@ -336,7 +336,7 @@
 		
        <?php
 		require "connect.php";
-        $query="select * from rep_general_eval where emp_id='eid'";
+        $query="select * from general_eval where emp_id='$emp_id'";
         $data=sqlsrv_query($conn,$query);
         $row=sqlsrv_fetch_array($data);
 			       $value1=$row['public_relation'];
@@ -400,7 +400,7 @@
 
 
 	<div class="container">
-		<form role="form" action="rev_officer_back.php?uid=<?=$uid?>&emp_id=<?=$eid?>&rep_id=<?=$repid?>" method="post">
+		<form role="form" action="rev_officer_back.php?revid=<?=$rev_id?>&empid=<?=$emp_id?>&repid=<?=$rep_id?>" method="post">
 			<div class="form-group">
 				<label class="control-label">
 					1. REMARKS OF THE REVIEWING OFFICER
@@ -485,6 +485,20 @@
 			</div>
 			</div>
 			
+	<div class="form-group">
+        <label class="control-label">
+          During the period of Report: 
+        </label>
+        
+        <select class="my-select" name="por">
+                  <option>2015-16</option>
+                  <option>2016-17</option>
+                  <option>2017-20</option>
+                  <option>2018-19</option>
+                  <option>2019-20</option>
+        </select>
+    </div>
+
 			<div class="text-center">
 				<button class="btn btn-default" name="submit">Submit</button>
 			</div>
