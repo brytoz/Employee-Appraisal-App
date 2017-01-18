@@ -22,7 +22,7 @@ if(!empty($_GET))
   include "header.php";
 	$uid=$_GET['uid'];
 	$eid=$_GET['eid'];
-	session_start();
+	//session_start();
 	$_SESSION['uid']=$uid;
 	$_SESSION['eid']=$eid;
 }
@@ -243,6 +243,20 @@ if(!empty($_GET))
 					</div>
 				</div>
 			</div>
+
+      <div class="form-group">
+        <label class="control-label">
+          During the period of Report: 
+        </label>
+        
+        <select class="my-select" name="por">
+                  <option>2015-16</option>
+                  <option>2016-17</option>
+                  <option>2017-20</option>
+                  <option>2018-19</option>
+                  <option>2019-20</option>
+        </select>
+      </div>
 
 			<div class="text-center">
 					<button class="btn btn-default" name="submit_2" type="submit" value="submit_2">Submit</button>

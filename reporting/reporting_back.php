@@ -76,7 +76,7 @@ require "connect.php";
 
 	else if(isset($_POST['submit_2']))
 	{
-		if(!empty($_POST['public_relation'])&&!empty($_POST['training'])&&!empty($_POST['health_state'])&&!empty($_POST['integrity'])&&!empty($_POST['pen_picture'])&&!empty($_POST['over_all_grading'])&&!empty($_POST['rdate']))
+		if(!empty($_POST['public_relation'])&&!empty($_POST['training'])&&!empty($_POST['health_state'])&&!empty($_POST['integrity'])&&!empty($_POST['pen_picture'])&&!empty($_POST['over_all_grading'])&&!empty($_POST['rdate'])&&!empty($_POST['por']))
 		{
 			session_start();
 			$uid=$_SESSION['uid'];
@@ -88,13 +88,14 @@ require "connect.php";
 			$pen_picture=$_POST['pen_picture'];
 			$over_all_grading=$_POST['over_all_grading'];
 			$rdate=$_POST['rdate'];
+			$por=$_POST['por'];
 			$rdate=date('Y-m-d', strtotime('$rdate'));
 
-			$query="insert into rep_general_eval 
-			(rep_off_id,emp_id,public_relation,training,health_state,integrity,pen_picture,over_all_grading,rdate)
+			$query="insert into general_eval 
+			(rep_off_id,emp_id,public_relation,training,health_state,integrity,pen_picture,over_all_grading,dor,por)
 			values
-			('$uid','$eid','$public_relation','$training','$health_state','$integrity','$pen_picture','$over_all_grading','$rdate')";
-			echo "check";
+			('$uid','$eid','$public_relation','$training','$health_state','$integrity','$pen_picture','$over_all_grading','$rdate','$por')";
+			//echo "check";
 
 			sqlsrv_query($conn,$query)or die(print_r(sqlsrv_errors(),true));
 			echo "form submitted succesfully";
