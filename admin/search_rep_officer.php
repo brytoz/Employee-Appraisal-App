@@ -13,10 +13,10 @@ if($_POST)
 	//echo "sharique";
 	$q=$_POST['search'];
 	if($q=='all'||$q=='All')
-		$query="select * from reporting_officer";
+		$query="select * from reporting_officer order by sno";
 	else
 	$query = 	"select * from 
-				reporting_officer where reporting_officer.rep_off_id like '%$q%' ";
+				reporting_officer where reporting_officer.rep_off_id like '%$q%'  order by sno";
 
 	$data=sqlsrv_query($conn,$query) or die('error in searching');
 ?>
@@ -26,6 +26,7 @@ if($_POST)
 	<th >S.No.</th>
 	<th>Name</th>
 	<th>Designation</th>
+	<th >Reviewing Officer ID</th>
 	<th >Reporting Officer ID</th>
 	<th >Password</th>
 	</tr>
@@ -39,6 +40,7 @@ if($_POST)
 		$rep_off_id=$row['rep_off_id'];
 		$name=$row['name'];
 		$desi=$row['designation'];
+		$rev=$row['rev_off_id'];
 
 ?>
 				<tbody>
@@ -46,6 +48,7 @@ if($_POST)
 				<td><?=$sno?></td>
 				<td><?=$name?></td>
 				<td><?=$desi?></td>
+				<td><?=$rev?></td>
 				<td><?=$rep_off_id?></td>
 				<td><?=$passwd?></td>
 				</tr>

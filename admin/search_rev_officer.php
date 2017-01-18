@@ -13,10 +13,10 @@ if($_POST)
 	$q=$_POST['search'];
 	//echo $q;
 	if($q=='all'||$q=='All')
-		$query="select * from review_officer";
+		$query="select * from review_officer order by sno";
 	else
 	$query = 	"select * from 
-				review_officer where rev_off_id like '%$q%' ";
+				review_officer where rev_off_id like '%$q%'  order by sno";
 
 	$data=sqlsrv_query($conn,$query) or die('error in searching');
 ?>

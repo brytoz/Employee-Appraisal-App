@@ -13,7 +13,7 @@ if($_POST)
 	if($q=='all'||$q=='All')
 		$query="select * from employee";
 	else
-	$query = "select * from employee where emp_id like '%$q%' order by emp_id";
+	$query = "select * from employee where emp_id like '%$q%' order by sno";
 	$data=sqlsrv_query($conn,$query) or die('error in searching');
 ?>
 	<br><br>
@@ -27,6 +27,7 @@ if($_POST)
 	<th>Reporting Officer ID</th>
 	<th>Reviewing Officer ID</th>
 	<th>Cadre</th>
+	<th>Ministry/Department of</th>
 	<th>Year of Reporting</th>
 	</tr>
     </thead>
@@ -41,6 +42,7 @@ if($_POST)
 		$rev_off_id=$row['rev_off_id'];
 		$name=$row['name'];
 		$cadre=$row['cadre'];
+		$depof=$row['depof'];
 		if(!empty($row['yor']))
 		{
 			$yor=$row['yor'];
@@ -58,6 +60,7 @@ if($_POST)
 				<td><?=$name?></td>
 				<td><?=$rep_off_id?></td>
 				<td><?=$rev_off_id?></td>
+				<td><?=$depof?></td>
 				<td><?=$cadre?></td>
 				<td><?php if(!empty($yor))echo $yor ?></td>
 				</tr>

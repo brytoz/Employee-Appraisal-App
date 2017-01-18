@@ -1,4 +1,3 @@
-
 <?php
 	require "connect.php";
 
@@ -26,7 +25,7 @@
 					else
 					{
 						$desig=$_POST['add-designation'];
-						if(!preg_match($valid_name,$designation))
+						if(!preg_match($valid_name,$desig))
 						{
 							echo "Enter valid";
 						}
@@ -69,18 +68,18 @@
 				//echo "check";
 			$rep_id=$_POST['rep-id'];
 			$rev_id=$_POST['rev-id'];
-			$query = "update reporting_officer set rev_off_id='$rev_id' where rep_off_id='$rep_id'";
 
-			sqlsrv_query($conn,$query) or die('error in insertion1');
-			$query ="update employee 
-					set rev_off_id='$rev_id' 
-					from 
-					employee inner join reporting_officer  
-					on employee.rep_off_id = reporting_officer.rep_off_id
-					where employee.rep_off_id='$rep_id'";
-			sqlsrv_query($conn,$query) or die('error in insertion2');
+			//echo $rep_id,$rev_id;
+			$query = "update reporting_officer set rev_off_id= '$rev_id' where rep_off_id= '$rep_id' ";
 			
-			echo "form submitted successfully";
+			sqlsrv_query($conn,$query) or die(print_r(sqlsrv_errors(),true));
+			//echo "form submitted successfully 1";
+			$query ="update employee 
+					set rev_off_id= '$rev_id'
+					where employee.rep_off_id= '$rep_id'";
+			sqlsrv_query($conn,$query) or die(print_r(sqlsrv_errors(),true));
+			
+			echo "form submitted successfully ";
 		}
 		else
 		{

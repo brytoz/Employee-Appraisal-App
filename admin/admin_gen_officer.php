@@ -77,8 +77,13 @@
  							</div>
  			
  							<div class="form-group">
- 							<label>Reporting for the year/period of ending</label>
+ 							<label>Report for the year/period of ending</label>
  							<input type="date" name="add-date" class="form-control">
+ 							</div>
+
+ 							<div class="form-group">
+ 							<label>Ministry/Department of</label>
+ 							<input type="date" name="depof" class="form-control">
  							</div>
  			
  							<div class="form-group">

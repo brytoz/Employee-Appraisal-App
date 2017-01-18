@@ -2,7 +2,7 @@
 	require "connect.php";
 	if(isset($_POST['add-submit']))
 	{
-		if(!empty($_POST['add-name'])&&!empty($_POST['add-cadre'])&&!empty($_POST['add-date'])&&!empty($_POST['add-id'])&&!empty($_POST['add-pass']))
+		if(!empty($_POST['add-name'])&&!empty($_POST['add-cadre'])&&!empty($_POST['add-date'])&&!empty($_POST['depof'])&&!empty($_POST['add-id'])&&!empty($_POST['add-pass']))
 		{
 			$name=$_POST['add-name'];
 			$valid_name="/^[a-zA-Z]+/";
@@ -31,8 +31,9 @@
 					else
 					{
 						$passwd=$_POST['add-pass'];
+						$depof=$_POST['depof'];
 						$date=date('Y-m-d', strtotime('$date'));
-						$query = "insert into employee (emp_id,passwd,cadre,name,yor) values ('$id','$passwd','$cadre','$name','$date')";
+						$query = "insert into employee (emp_id,passwd,cadre,name,yor,depof) values ('$id','$passwd','$cadre','$name','$date','$depof')";
 						sqlsrv_query($conn,$query) or die('error in insertion');
 						echo "form submitted successfully";
 					}

@@ -35,9 +35,7 @@
 </script>
 </head>
 <body>
-
-<?php require("header.php"); ?>
-
+<?php require("header.php") ?>
 <!--Select list to show options depending upon officer type-->
 <div class="container col-sm-3" id="c1">
       <form role="form" method="post" name="page" action="<?php echo $_SERVER['PHP_SELF']?>" >
@@ -54,7 +52,7 @@
     </div>
 <!--Select list end-->
 <!--Actions that can be performed by admin on a officer-->
-    <div class="container col-sm-5  " id="c2">
+    <div class="container col-sm-3  " id="c2">
       <ul class="nav nav-pills">
         <li class="active"><a data-toggle="pill" href="#add">Add Officer</a></li>
         <li><a data-toggle="pill" href="#edit">Edit Officer</a></li>
@@ -79,8 +77,13 @@
               </div>
       
               <div class="form-group">
-              <label>Reporting for the year/period of ending</label>
+              <label>Report for the year/period of ending</label>
               <input type="date" name="add-date" class="form-control">
+              </div>
+
+              <div class="form-group">
+              <label>Ministry/Department of</label>
+              <input type="text" name="depof" class="form-control">
               </div>
       
               <div class="form-group">
@@ -98,7 +101,7 @@
               </form>
         </div>
 <!--End of add officer code-->
-<!--option no-2 Remove an officer-->
+<!--option no-2 Edit an officer-->
         <div id="edit" class="tab-pane fade">
           <h3>Edit Officer</h3>
             <form role="form" method="post" action="admin_gen_officer_back.php" name="edit-form" >
@@ -108,7 +111,6 @@
               <input type="text" name="edit-id" class="form-control search" placeholder="Search officer by ID"  id="searchid">
               </div>
               <button type="submit" class="btn btn-default" name="edit-submit">Edit</button>
-              <h4 id="note">Note:To show all officer type all.</h4>
               <div class="result"></div>
               
             </form>

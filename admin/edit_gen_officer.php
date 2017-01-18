@@ -36,7 +36,7 @@
     $row=sqlsrv_fetch_array($data);
     if(isset($_POST['update-submit']))
     {
-      if(!empty($_POST['add-name'])&&!empty($_POST['add-cadre'])&&!empty($_POST['add-date'])&&!empty($_POST['add-id'])&&!empty($_POST['add-pass']))
+      if(!empty($_POST['add-name'])&&!empty($_POST['add-cadre'])&&!empty($_POST['add-date'])&&!empty($_POST['depof'])&&!empty($_POST['add-id'])&&!empty($_POST['add-pass']))
         {
           $name=$_POST['add-name'];
           $valid_name="/^[a-zA-Z]+/";
@@ -64,6 +64,7 @@
               }
               else
               {
+                $depof=$_POST['depof'];
                 $passwd=$_POST['add-pass'];
                 $date=date('Y-m-d', strtotime('$date'));
                 $query = "update employee set 
@@ -71,7 +72,8 @@
                 passwd='$passwd',
                 cadre='$cadre',
                 name='$name',
-                yor='$date' 
+                yor='$date' ,
+                depof = '$depof'
                 where emp_id='$id'";
                 sqlsrv_query($conn,$query) or die('error in insertion');
                 echo "Officer Updated Successfully";
@@ -121,6 +123,11 @@
  							  <label>Password</label>
  							  <input type="text" name="add-pass" class="form-control" value="<?=$row['passwd']?>">
  							</div>
+
+              <div class="form-group">
+                <label>Ministry/Department of</label>
+                <input type="text" name="add-pass" class="form-control" value="<?=$row['depof']?>">
+              </div>
 
               <div class="form-group">
                 <label>Reporting for the year/period of ending</label>
