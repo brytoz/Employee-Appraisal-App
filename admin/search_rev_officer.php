@@ -29,6 +29,7 @@ if($_POST)
 	<th>Designation</th>
 	<th >reviewing Officer ID</th>
 	<th >Password</th>
+	<th>Edit Officer</th>
 	</tr>
 	</thead>
 <?php
@@ -49,6 +50,7 @@ if($_POST)
 				<td><?=$desig?></td>
 				<td><?=$rev_off_id?></td>
 				<td><?=$passwd?></td>
+				<td><button type="button" class="btn btn-link" onclick="location.href='edit_rev_officer.php?id=<?=$rev_off_id?>'">Edit</button></td>
 				</tr>
 				</tbody>
 <?php

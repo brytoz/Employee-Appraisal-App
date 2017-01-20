@@ -29,6 +29,7 @@ if($_POST)
 	<th >Reviewing Officer ID</th>
 	<th >Reporting Officer ID</th>
 	<th >Password</th>
+	<th>Edit Officer</th>
 	</tr>
 	</thead>
 <?php
@@ -51,6 +52,7 @@ if($_POST)
 				<td><?=$rev?></td>
 				<td><?=$rep_off_id?></td>
 				<td><?=$passwd?></td>
+				<td><button type="button" class="btn btn-link" onclick="location.href='edit_rep_officer.php?id=<?=$rep_off_id?>'">Edit</button></td>
 				</tr>
 				</tbody>
 				

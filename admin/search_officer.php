@@ -11,7 +11,7 @@ if($_POST)
 	//echo "sharique";
 	$q=$_POST['search'];
 	if($q=='all'||$q=='All')
-		$query="select * from employee";
+		$query="select * from employee order by sno";
 	else
 	$query = "select * from employee where emp_id like '%$q%' order by sno";
 	$data=sqlsrv_query($conn,$query) or die('error in searching');
@@ -29,6 +29,7 @@ if($_POST)
 	<th>Cadre</th>
 	<th>Ministry/Department of</th>
 	<th>Year of Reporting</th>
+	<th>Edit</th>
 	</tr>
     </thead>
 <?php
@@ -63,6 +64,7 @@ if($_POST)
 				<td><?=$depof?></td>
 				<td><?=$cadre?></td>
 				<td><?php if(!empty($yor))echo $yor ?></td>
+				<td><button type="button" class="btn btn-link" onclick="location.href='edit_gen_officer.php?id=<?=$emp_id?>'">Edit</button></td>
 				</tr>
 				</tbody>
 <?php
